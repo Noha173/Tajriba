@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>السحب</title>
+    <style>
+        body { font-family: Arial; text-align: center; background-color: #f4f4f4; }
+        input, button { margin: 10px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>سحب الأرباح</h1>
+    <h2>رصيدك: <span id="balance">$50</span></h2>
+    <input type="number" id="withdrawAmount" placeholder="المبلغ المراد سحبه">
+    <button onclick="withdraw()">طلب السحب</button>
+    <button onclick="window.location.href='roulette.html'">العودة إلى عجلة الحظ</button>
+
+    <script>
+        function withdraw() {
+            const balance = 50; // الرصيد الحالي
+            const withdrawAmount = parseFloat(document.getElementById("withdrawAmount").value);
+            if (withdrawAmount > 0 && withdrawAmount <= balance) {
+                alert(`تم طلب السحب: ${withdrawAmount}$`);
+            } else {
+                alert("رصيد غير كافٍ أو مبلغ غير صالح.");
+            }
+        }
+    </script>
+</body>
+</html>
